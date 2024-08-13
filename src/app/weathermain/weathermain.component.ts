@@ -21,20 +21,7 @@ ngOnInit(): void {
 
 
 
-// getWeather(): void {
-//   if (!this.city) {
-//     this.errorMessage = 'Şehir adı boş olamaz.';
-//     return;
-//   }
 
-//   this.service.getWeatherData(this.city, this.unit).subscribe(data => {
-//     this.weatherData = data;
-//     this.errorMessage = null; // Hata mesajını sıfırla
-//   }, error => {
-//     this.errorMessage = 'Geçersiz şehir adı veya API hatası: ' + error.message;
-//     this.weatherData = null; // Hava verilerini sıfırla
-//   });
-// }
 
 getWeather(): void {
   if (!this.city) {
@@ -69,7 +56,7 @@ getWeather(): void {
 
 
 getFiveDayForecast(): any[] {
-  if (!this.weatherData || !this.weatherData.list) return [];  // Bu satırı ekleyerek null kontrolü yapın
+  if (!this.weatherData || !this.weatherData.list) return [];  
 
   const forecasts = this.weatherData.list;
   const uniqueDates = [...new Set(forecasts.map((item: any) => item.dt_txt.split(' ')[0]))];
