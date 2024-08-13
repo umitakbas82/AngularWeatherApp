@@ -29,7 +29,7 @@
         </div>
     
         <div *ngIf="hourlyForecast.length > 0">
-            <h2>{{ city }} için 24 Saatlik Hava Durumu:</h2>
+            <h2 style="text-transform:capitalize">{{ city }} İçin 24 Saatlik Hava Durumu:</h2>
             <div class="row">
               <div class="col-md-2 mb-3" *ngFor="let hour of hourlyForecast.slice(0, 24)">
                 <div class="card">
@@ -45,7 +45,7 @@
           </div>
 <div class="col">
     <div *ngIf="weatherData">
-        <p>{{ city }} için 5 Günlük Hava Durumu:</p>
+        <p style="text-transform:capitalize">{{ city }} için 5 Günlük Hava Durumu:</p>
         <div class="row">
           <div class="col-md-4 mb-3" *ngFor="let day of getFiveDayForecast()">
             <div class="card">
